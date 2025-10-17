@@ -66,9 +66,15 @@ Task: Provide accurate, friendly response. Say "I'll escalate this" if uncertain
 ``` 
 **2. Conversation Summarization** 
 - Summarizes long conversations for context retention
-- Extracts key intents and unresolved issues 
+- Extracts key intents and unresolved issues
+
 **3. Escalation Decision**
-``` Analyze if query requires human support based on: - Confidence score < 0.7 - Complex/sensitive issues (billing, legal, complaints) - Multiple failed resolution attempts ``` 
+``` 
+Analyze if query requires human support based on:
+- Confidence score < 0.7
+- Complex/sensitive issues (billing, legal, complaints)
+- Multiple failed resolution attempts
+``` 
 ## 💾 Session Management 
 - **In-Memory Storage** (Prototype) - Redis/Database ready
 - **Session TTL** - 30 minutes of inactivity
