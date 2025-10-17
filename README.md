@@ -1,6 +1,5 @@
 # AI_Chatbot_service_unthinkable
 Objective:  Simulate customer support interactions using AI for FAQs and escalation scenarios. For: Unthinkable Solutions
-# AI Customer Support Bot 🤖 
 > Intelligent FAQ handling with contextual memory & smart escalation A production-ready prototype demonstrating AI-powered customer support with conversation context retention, automatic escalation logic, and session management.
 ## 🎯 Core Features 
 - **Contextual Conversations**
@@ -24,17 +23,22 @@ Objective:  Simulate customer support interactions using AI for FAQs and escalat
 ### Run 
 ```bash # Start backend server python app.py # Server runs on http://localhost:5000 ``` 
 ## 📡 API Endpoints 
-### `POST /api/chat` Send a customer query and receive AI-generated response. **Request:** ```json { "session_id": "user-123", "message": "How do I reset my password?", "user_id": "customer-456" } ``` **Response:** ```json { "response": "To reset your password, click on...", "escalated": false, "session_id": "user-123", "confidence": 0.92 } ``` 
-### `GET /api/session/<session_id>` Retrieve conversation history for a session.
-### `POST /api/escalate` Manually escalate a conversation to human support. 
+### `POST /api/chat` 
+Send a customer query and receive AI-generated response. 
+**Request:** ```json { "session_id": "user-123", "message": "How do I reset my password?", "user_id": "customer-456" } ``` 
+**Response:** ```json { "response": "To reset your password, click on...", "escalated": false, "session_id": "user-123", "confidence": 0.92 } ``` 
+### `GET /api/session/<session_id>` 
+Retrieve conversation history for a session.
+### `POST /api/escalate` 
+Manually escalate a conversation to human support. 
+
 ## 🧠 LLM Integration 
 ### Prompt Engineering Strategy 
 **1. Response Generation** ``` System: You are a helpful customer support agent with access to FAQs. Context: [Previous conversation history] Knowledge: [Relevant FAQ entries] Query: [Customer question] Task: Provide accurate, friendly response. Say "I'll escalate this" if uncertain. ``` 
 **2. Conversation Summarization** - Summarizes long conversations for context retention - Extracts key intents and unresolved issues 
 **3. Escalation Decision** ``` Analyze if query requires human support based on: - Confidence score < 0.7 - Complex/sensitive issues (billing, legal, complaints) - Multiple failed resolution attempts ``` 
 ## 💾 Session Management 
-- **In-Memory Storage** (Prototype)
-- - Redis/Database ready
+- **In-Memory Storage** (Prototype) - Redis/Database ready
 - **Session TTL** - 30 minutes of inactivity
 - **Context Window** - Last 10 messages retained for LLM context
 - **Metadata Tracking** - Timestamps, user info, escalation status
