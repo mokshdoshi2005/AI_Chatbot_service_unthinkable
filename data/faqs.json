@@ -1,0 +1,16 @@
+[
+  {
+    "id": "faq_001",
+    "category": "account",
+    "question": "How do I reset my password?",
+    "answer": "Click 'Forgot Password' on login, enter your email, and follow the reset instructions.",
+    "keywords": ["password", "reset", "login", "forgot"]
+  },
+  {
+    "id": "faq_002",
+    "category": "orders",
+    "question": "How can I track my order?",
+    "answer": "Go to Orders -> Track order, or use the tracking link in your email.",
+    "keywords": ["track", "order", "shipping", "delivery"]
+  }
+]
